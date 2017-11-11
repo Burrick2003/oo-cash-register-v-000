@@ -33,24 +33,24 @@ class CashRegister
   #apply_discount the cash register was initialized with an employee discount returns success message with updated total
   #apply_discount the cash register was initialized with an employee discount reduces the total
   #apply_discount the cash register was not initialized with an employee discount returns a string error message that there is no discount to apply
-
     def apply_discount
       if @discount == 0
         "There is no discount to apply."
       else
         @total = @total - @total * 0.01 * @discount
-        temp = @total
+        #temp = @total
         "After the discount, the total comes to $#{@total.to_i}."
       end
     end
 
-  #items returns an array containing all items that have been added
+#items returns an array containing all items that have been added
     def items
       @items
     end
-    #void_last_transaction subtracts the last transaction from the total
-      def void_last_transaction
-        @total = 0
-        @items = []
-      end
+    
+#void_last_transaction subtracts the last transaction from the total (not literally true apparently, clears out but keeps discount)
+    def void_last_transaction
+      @total = 0
+      @items = []
+    end
 end
