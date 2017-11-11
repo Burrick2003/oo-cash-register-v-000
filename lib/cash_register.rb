@@ -20,8 +20,8 @@ class CashRegister
     def add_item(name, price, qty=1) #accepts a title and a price and increases the total, also accepts an optional quantity, doesn't forget about the previous total
       @total = @total + price * qty
       qty.times do
-        @items << "#{name}"
-      end
+        |@items << "#{name}"|
+      #end
     end
 
   #apply_discount the cash register was initialized with an employee discount applies the discount to the total price
